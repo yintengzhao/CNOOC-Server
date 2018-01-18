@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>中海油</title>
+    <link rel="stylesheet" type="text/css" href="./add.css">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./homepage.js"></script>
+
+
+
+<script type="text/javascript">
+function insRow()
+  {
+  var x=document.getElementById('myTable').insertRow()
+  var a=x.insertCell(0)
+  var b=x.insertCell(1)
+  var c=x.insertCell(2)
+  var d=x.insertCell(3)
+  var e=x.insertCell(4)
+  var f=x.insertCell(5)
+
+  a.innerHTML="1"
+  b.innerHTML="<input>"
+  c.innerHTML="<input></input>"
+  d.innerHTML="<input></input>"
+  e.innerHTML="<button>详细</input>"
+
+  f.innerHTML="<input></input>"   
+  }
+</script>
+
+
+
+
+
+</head>
+
+<body>
+
+<div id="container">
+    <div id="header">
+    <button class="btn btn-primary" id="fat-btn1" type="button" onclick="submitForm" style="height:30px;width:100px;">重新登录</button>
+    <button class="btn btn-primary" id="fat-btn2" type="button" onclick="submitForm" style="height:30px;width:100px;">退出</button>
+    <img class="logo" src="./image/logo.jpg">
+    <h1 >物资保障体系模拟仿真软件研究与开发平台</h1>
+    <hr style="color: gray;background-color: gray" />
+    </div>
+    <div>
+
+
+    
+    <input id="s2" type="text" name="" style="width: 10%" class="form-control" placeholder="属性2">
+    <button class="btn-primary" style="margin: 20px 0px 0px 550px" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">...</button>
+
+    
+    </div>
+    <div>
+    <button class="btn-primary btn-lg" style="width: 170px;margin:60px 40px 50px 100px;" id="xz"   onclick="insRow()">添加航程</button>
+    <p style="color: red;float: right;position: absolute;left: 300px;top: 280px">说明：点击【添加航程】按钮后下边的明细行会增加一条，表示从第一条明细中的基地会行使到第二条明细中的基地。</p>
+    </div>
+
+    <div  style="text-align: center;" >
+        <table border="10" class="table table-bordered"  id="myTable" style="margin:0px 100px;width: 90%">
+            <tr>
+                <td id="" >序号</td>
+                <td id="" >基地选择</td>
+                <td id="" >预计人数</td>
+                <td id="" >预计物资重量</td>
+                <td id="" >物资明细</td>
+                <td id="" >备注</td>
+            </tr>            
+        </table>
+    </div>
+    <div>   <p id="footer" style="text-align: center;margin-top: 500px;">版权所有© www.cnooc.com.cn</p>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="position: absolute;top: 300px">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                交通工具选择
+                </h4>
+            </div>
+            <div >
+
+            <form style="position: absolute;left: 10px;top: 100px">
+<input type="radio" name="sex" value="male" ><br><br>
+<input type="radio" name="sex" value="female">
+</form>
+                <table border="10" class="table table-bordered"  id="myTable" >
+            <tr>
+                <td id="" >选择</td>
+                <td id="" >种类</td>
+                <td id="" >型号</td>
+            </tr>
+            <tr>
+            
+                <td id="" ></td>
+                <td id="" >飞机</td>
+                <td id="" >播音747</td>
+            </tr> 
+            <tr>
+                <td id="" ></td>
+                <td id="" >轮船</td>
+                <td id="" >辽宁号</td>
+            
+            </tr>                   
+        </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary">
+                    提交更改
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

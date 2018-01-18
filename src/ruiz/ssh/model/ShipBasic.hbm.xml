@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-11-30 15:42:34 by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="mydb" dynamic-insert="false" dynamic-update="false" mutable="true" name="ruiz.ssh.model.ShipBasic" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="ship_basic">
+        <id name="idship" type="int">
+            <column name="idship"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="shipName" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="ship_name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="flagNation" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="flag_nation"/>
+        </property>
+        <property generated="never" lazy="false" name="shipPort" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="ship_port"/>
+        </property>
+        <property generated="never" lazy="false" name="shipType" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="ship_type"/>
+        </property>
+        <property generated="never" lazy="false" name="bulitTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="19" name="bulit_time"/>
+        </property>
+        <property generated="never" lazy="false" name="age" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="age"/>
+        </property>
+        <property generated="never" lazy="false" name="seaZone" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="sea_zone"/>
+        </property>
+        <property generated="never" lazy="false" name="motorAm" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="motor_am"/>
+        </property>
+        <property generated="never" lazy="false" name="singleHp" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="single_hp" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="totalHp" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="total_hp" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="powerKw" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="power_kw" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="length" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="length" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="width" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="width" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="depth" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="depth" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="iceLevel" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="ice_level"/>
+        </property>
+        <property generated="never" lazy="false" name="fireExtinguishAm" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="`fire-extinguish_am`"/>
+        </property>
+        <property generated="never" lazy="false" name="callNum" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="call_num"/>
+        </property>
+        <property generated="never" lazy="false" name="draftDepth" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="draft_depth" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="weight" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="weight" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="netWeight" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="net_weight" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="loadWeight" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="load_weight" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="deckLen" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="deck_len" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="deckWidth" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="deck_width" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="deckArea" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="deck_area" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="bowThrusterAm" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="bow_thruster_am"/>
+        </property>
+        <property generated="never" lazy="false" name="bowThrusterPower" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="bow_thruster_power" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="sternThrusterHp" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="stern_thruster_hp" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="isAnchor" optimistic-lock="true" type="java.lang.Byte" unique="false">
+            <column name="is_anchor"/>
+        </property>
+        <property generated="never" lazy="false" name="maxSpeed" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="max_speed" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="ecoSpeed" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="eco_speed" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="maintowAmount" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="maintow_amount"/>
+        </property>
+        <property generated="never" lazy="false" name="maintowLen" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="maintow_len" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="maitowDiameter" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="maitow_diameter" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="pullForce" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="pull_force" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="drinkingwater" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="drinkingwater" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="boreholewater" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="boreholewater" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="oilbunker" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="oilbunker"/>
+        </property>
+        <property generated="never" lazy="false" name="bulkcan" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="bulkcan"/>
+        </property>
+        <property generated="never" lazy="false" name="mudtank" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="mudtank"/>
+        </property>
+        <property generated="never" lazy="false" name="brinetank" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="brinetank"/>
+        </property>
+        <property generated="never" lazy="false" name="deckLoad" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="deck_load" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="deckStrength" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="deck_strength" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="passengerCapacity" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="passenger_capacity"/>
+        </property>
+        <property generated="never" lazy="false" name="ableoilfence" optimistic-lock="true" type="java.lang.Byte" unique="false">
+            <column name="ableoilfence"/>
+        </property>
+        <property generated="never" lazy="false" name="mainNavigationzone" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="main_navigationzone"/>
+        </property>
+        <property generated="never" lazy="false" name="mmsi" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="mmsi"/>
+        </property>
+        <property generated="never" lazy="false" name="feDisplacement" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="fe_displacement"/>
+        </property>
+        <property generated="never" lazy="false" name="feRange" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="fe_range" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="feHeight" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="fe_height" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="foamTankCapacity" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="Foam_tank_capacity" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="lifeboatAm" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="lifeboat_am"/>
+        </property>
+        <property generated="never" lazy="false" name="lifeboatSp" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="lifeboat_sp" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="lifeboatLoad" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="lifeboat_load"/>
+        </property>
+        <property generated="never" lazy="false" name="rescueboatAm" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="rescueboat_am"/>
+        </property>
+        <property generated="never" lazy="false" name="recueboatLoad" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="recueboat_load"/>
+        </property>
+        <property generated="never" lazy="false" name="lifenresboatAm" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="lifenresboat_am"/>
+        </property>
+        <property generated="never" lazy="false" name="lifenresboatLoad" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="lifenresboat_load"/>
+        </property>
+        <property generated="never" lazy="false" name="raftAm" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="raft_am"/>
+        </property>
+        <property generated="never" lazy="false" name="raftLoad" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="raft_load"/>
+        </property>
+        <property generated="never" lazy="false" name="treatmenttank" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="treatmenttank" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="oilrecoverytank" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="oilrecoverytank" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="oilSprayingArmAm" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="Oil_spraying_arm_am"/>
+        </property>
+        <property generated="never" lazy="false" name="oilSprayingArmLen" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="Oil_spraying_arm_len" precision="10"/>
+        </property>
+        <property generated="never" lazy="false" name="communication" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="communication"/>
+        </property>
+        <property generated="never" lazy="false" name="imoNum" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="imo_num"/>
+        </property>
+        <property generated="never" lazy="false" name="factory" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="factory"/>
+        </property>
+        <property generated="never" lazy="false" name="shipowner" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="shipowner"/>
+        </property>
+        <property generated="never" lazy="false" name="company" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="company"/>
+        </property>
+    </class>
+</hibernate-mapping>

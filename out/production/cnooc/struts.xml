@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+        <!-- 启用开发者模式 -->
+        <constant name="struts.devMode" value="true"></constant>
+        <!-- 启用动态方法调用 -->
+        <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+        <!-- 根据不同的返回结果，跳转到不同的页面 -->
+        <package name="user" extends="json-default"  namespace="/">
+            <action name="user" class="ruiz.ssh.action.UserAction">
+                <result name="error">/error.jsp</result>
+                <result name="success">/success.jsp</result>
+                <result name="update">/updateuser.jsp</result>
+            </action>
+        </package>
+        <package name="base" extends="struts-default,json-default"  namespace="/">
+            <action name="base"  
+            class="ruiz.ssh.action.BaseAction" method="queryBase">  
+            <result type="json">   
+                <param name="root">baselist</param>  
+        
+                <param name="excludeNullProperties">true</param> 
+ 				<param name="excludeProperties">  
+                    
+                </param> 
+            </result>  
+        </action> 
+         <!-- <action name="base" class="ruiz.ssh.action.BaseAction">
+                <result name="error">/base.jsp</result>
+                <result name="success">/base.jsp</result>
+                <result name="update">/base.jsp</result>
+            </action> -->
+        </package>
+
+</struts>

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+        <!-- 启用开发者模式 -->
+        <constant name="struts.devMode" value="true"></constant>
+        <!-- 启用动态方法调用 -->
+        <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+        <!-- 根据不同的返回结果，跳转到不同的页面 -->
+        <package name="user" extends="json-default"  namespace="">
+            <action name="user" class="ruiz.ssh.action.UserAction">
+                <result name="error">/error.jsp</result>
+                <result name="success">/tables_control.jsp</result>
+                <result name="update">/updateuser.jsp</result>
+            </action>
+        </package>
+        <package name="base" extends="struts-default,json-default"  namespace="/base">
+            <action name="list"  
+            class="ruiz.ssh.action.BaseAction" method="list">  
+           		 <result type="json">   
+                <param name="root">baselist</param>  
+                <param name="excludeNullProperties">true</param> 
+ 				<param name="excludeProperties"></param> 
+           		 </result>  
+       		 </action>
+       		 <action name="tblist"  
+            class="ruiz.ssh.action.BaseAction" method="list">  
+           		 <result type="json">   
+                <param name="root">dataMap</param>  
+                <param name="excludeNullProperties">true</param> 
+ 				<param name="excludeProperties"></param> 
+           		 </result>  
+       		 </action>
+			<action name="tbadd"  
+            	class="ruiz.ssh.action.BaseAction" method="tbadd">  
+            	<result type="json">   
+               		<param name="root">addMap</param>  
+            	</result>  
+       	 	</action>
+        	<action name="tbupdate"  
+            	class="ruiz.ssh.action.BaseAction" method="tbupdate">  
+            	<result type="json">   
+               		<param name="root">updateMap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="tbdelete"  
+            	class="ruiz.ssh.action.BaseAction" method="tbdelete">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="match"  
+            	class="ruiz.ssh.action.BaseAction" method="match">  
+            	<result type="json">   
+               		<param name="root">baselist</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="get"  
+            	class="ruiz.ssh.action.BaseAction" method="query">  
+            	<result type="json">   
+               		<param name="root">baselist</param>  
+            	</result>  
+       	 	</action>
+        </package>
+        
+        <package name="ship" extends="struts-default,json-default"  namespace="/ship">
+            <action name="list"  
+            	class="ruiz.ssh.action.ShipAction" method="list">  
+            	<result type="json">   
+               		<param name="root">ships</param>  
+                	<param name="excludeNullProperties">true</param> 
+ 					<param name="excludeProperties">  </param> 
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="tblist"  
+            	class="ruiz.ssh.action.ShipAction" method="list">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="tbadd"  
+            	class="ruiz.ssh.action.ShipAction" method="tbaddShip">  
+            	<result type="json">   
+               		<param name="root">addmap</param>  
+            	</result>  
+       	 	</action>
+        	<action name="tbupdate"  
+            	class="ruiz.ssh.action.ShipAction" method="tbupdateShip">  
+            	<result type="json">   
+               		<param name="root">updatemap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="tbdelete"  
+            	class="ruiz.ssh.action.ShipAction" method="tbdeleteShip">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="add"  
+            	class="ruiz.ssh.action.ShipAction" method="addShip">  
+            	<result type="json">   
+               		<param name="root">ships</param>  
+                	<param name="excludeNullProperties">true</param> 
+ 					<param name="excludeProperties">  </param> 
+            	</result>  
+       	 	</action>
+         	
+         	<action name="delete"  
+            	class="ruiz.ssh.action.ShipAction" method="deleteShip">  
+            	<result type="json">   
+               		<param name="root">ships</param>  
+                	<param name="excludeNullProperties">true</param> 
+ 					<param name="excludeProperties">  </param> 
+            	</result>  
+       	 	</action>
+         	
+         	<action name="update"  
+            	class="ruiz.ssh.action.ShipAction" method="updateShipImpl">  
+            	<result type="json">   
+               		<param name="root">ships</param>  
+                	<param name="excludeNullProperties">true</param> 
+ 					<param name="excludeProperties">  </param> 
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="get"  
+            	class="ruiz.ssh.action.ShipAction" method="query">  
+            	<result type="json">   
+               		<param name="root">ships</param>  
+                	<param name="excludeNullProperties">true</param> 
+ 					<param name="excludeProperties">  </param> 
+            	</result> 
+       	 	</action>
+       	 	
+       	 	<action name="match"  
+            	class="ruiz.ssh.action.ShipAction" method="match">  
+            	<result type="json">   
+               		<param name="root">ships</param>  
+                	<param name="excludeNullProperties">true</param> 
+ 					<param name="excludeProperties">  </param> 
+            	</result>  
+       	 	</action>
+       	 	
+        </package>
+        
+        <package name="material" extends="struts-default,json-default"  namespace="/material">
+        
+        	<action name="json"  
+            	class="ruiz.ssh.action.MaterialAction" method="json">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="tbadd"  
+            	class="ruiz.ssh.action.MaterialAction" method="tbaddMaterial">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+        	<action name="tbupdate"  
+            	class="ruiz.ssh.action.MaterialAction" method="tbupdateMaterial">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="tbdelete"  
+            	class="ruiz.ssh.action.MaterialAction" method="tbdeleteMaterial">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+            <action name="list"  
+            	class="ruiz.ssh.action.MaterialAction" method="list">  
+            	<result type="json">   
+               		<param name="root">materials</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="add"  
+            	class="ruiz.ssh.action.MaterialAction" method="addMaterial">  
+            	<result type="json">   
+               		<param name="root">materials</param>  
+            	</result>  
+       	 	</action>
+         	
+         	<action name="delete"  
+            	class="ruiz.ssh.action.MaterialAction" method="deleteMaterial">  
+            	<result type="json">   
+               		<param name="root">materials</param>  
+            	</result>  
+       	 	</action>
+         	
+         	<action name="update"  
+            	class="ruiz.ssh.action.MaterialAction" method="updateMaterialImpl">  
+            	<result type="json">   
+               		<param name="root">materials</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="get"  
+            	class="ruiz.ssh.action.MaterialAction" method="query">  
+            	<result type="json">   
+               		<param name="root">materials</param>  
+            	</result> 
+       	 	</action>
+       	 	
+       	 	<action name="match"  
+            	class="ruiz.ssh.action.MaterialAction" method="match">  
+            	<result type="json">   
+               		<param name="root">materials</param>  
+            	</result>  
+       	 	</action>
+       	 	
+        </package>
+
+ 		<package name="weather" extends="struts-default,json-default"  namespace="/weather">
+            <action name="list"  
+            	class="ruiz.ssh.action.WeatherAction" method="list">  
+            	<result type="json">   
+               		<param name="root">weatherlist</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="add"  
+            	class="ruiz.ssh.action.WeatherAction" method="addWeather">  
+            	<result type="json">   
+               		<param name="root">weatherlist</param>  
+            	</result>  
+       	 	</action>
+         	
+         	<action name="delete"  
+            	class="ruiz.ssh.action.WeatherAction" method="deleteWeather">  
+            	<result type="json">   
+               		<param name="root">weatherlist</param>  
+            	</result>  
+       	 	</action>
+         	
+         	<action name="update"  
+            	class="ruiz.ssh.action.WeatherAction" method="updateWeatherImpl">  
+            	<result type="json">   
+               		<param name="root">weatherlist</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="query"  
+            	class="ruiz.ssh.action.WeatherAction" method="queryWeather">  
+            	<result type="json">   
+               		<param name="root">weather</param>  
+            	</result>  
+       	 	</action>
+        </package>
+
+
+ 		<package name="avlship" extends="struts-default,json-default"  namespace="/avlship">
+            <action name="list"  
+            	class="ruiz.ssh.action.AvlShipAction" method="list">  
+            	<result type="json">   
+               		<param name="root">avlships</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="add"  
+            	class="ruiz.ssh.action.AvlShipAction" method="add">  
+            	<result type="json">   
+               		<param name="root">avlships</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="delete"  
+            	class="ruiz.ssh.action.AvlShipAction" method="delete">  
+            	<result type="json">   
+               		<param name="root">avlships</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="update"  
+            	class="ruiz.ssh.action.AvlShipAction" method="update">  
+            	<result type="json">   
+               		<param name="root">avlships</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="query"  
+            	class="ruiz.ssh.action.AvlShipAction" method="query">  
+            	<result type="json">   
+               		<param name="root">avlship</param>  
+            	</result>  
+       	 	</action>
+        </package>
+        
+        <package name="listitem" extends="struts-default,json-default"  namespace="/listitem">
+            <action name="list"  
+            	class="ruiz.ssh.action.ListItemAction" method="list">  
+            	<result type="json">   
+               		<param name="root">listitems</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="add"  
+            	class="ruiz.ssh.action.ListItemAction" method="add">  
+            	<result type="json">   
+               		<param name="root">listitems</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="delete"  
+            	class="ruiz.ssh.action.ListItemAction" method="delete">  
+            	<result type="json">   
+               		<param name="root">listitems</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="update"  
+            	class="ruiz.ssh.action.ListItemAction" method="update">  
+            	<result type="json">   
+               		<param name="root">listitems</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="query"  
+            	class="ruiz.ssh.action.ListItemAction" method="query">  
+            	<result type="json">   
+               		<param name="root">listitem</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="querybyschid"  
+            	class="ruiz.ssh.action.ListItemAction" method="querybyschid">  
+            	<result type="json">   
+               		<param name="root">listitems</param>  
+            	</result>  
+       	 	</action>
+       	 	
+        </package>
+		
+		<package name="schedule" extends="struts-default,json-default"  namespace="/schedule">
+            
+       	 	<action name="querybyschid"  
+            	class="ruiz.ssh.action.ScheduleAction" method="querybyschid">  
+            	<result type="json">   
+               		<param name="root">listitems</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="solve"  
+            	class="ruiz.ssh.action.ScheduleAction" method="solve">  
+            	<result type="json">   
+               		<param name="root">listitems</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="parse"  
+            	class="ruiz.ssh.action.ScheduleAction" method="parse">  
+            	<result type="json">   
+               		<param name="root">listitems</param>  
+            	</result> 
+            	<!--  <interceptor-ref name="json"/> -->
+       	 	</action>
+        </package>
+        
+        <package name="basegoods" extends="struts-default,json-default"  namespace="/basegoods">
+            <action name="tbquery"  
+            	class="ruiz.ssh.action.BaseGoodsAction" method="tbquery">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="tbdelete"  
+            	class="ruiz.ssh.action.BaseGoodsAction" method="tbdelete">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="tbadd"  
+            	class="ruiz.ssh.action.BaseGoodsAction" method="tbadd">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="tbupdate"  
+            	class="ruiz.ssh.action.BaseGoodsAction" method="tbupdate">  
+            	<result type="json">   
+               		<param name="root">dataMap</param>  
+            	</result>  
+       	 	</action>
+       	 	<action name="add"  
+            	class="ruiz.ssh.action.BaseGoodsAction" method="add">  
+            	<result type="json">   
+               		<param name="root">basegoodslist</param>  
+            	</result>  
+       	 	</action>
+       	 	
+       	 	<action name="delete"  
+            	class="ruiz.ssh.action.BaseGoodsAction" method="delete">  
+            	<result type="json">   
+               		<param name="root">basegoodslist</param>  
+            	</result>  
+       	 	</action>
+       	 	
+        </package>
+</struts>

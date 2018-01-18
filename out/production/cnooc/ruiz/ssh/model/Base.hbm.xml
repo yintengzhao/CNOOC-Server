@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ruiz.ssh.model">
+
+    <!-- class 和 table 对应 -->
+    <class name="Base" table="base">
+        <!-- 一一对应 -->
+        <id name="id" column="id"></id>
+        <property name="storage_place" column="storage_place"></property> 
+        <property name="area" column="area"></property>        
+        <property name="staffnumber" column="staffnumber"></property>
+        <property name="work_duration" column="work_duration"></property>   
+    </class>
+</hibernate-mapping>

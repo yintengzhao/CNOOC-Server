@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ruiz.ssh.model">
+
+    <!-- class 和 table 对应 -->
+    <class name="Weather" table="weather">
+        <!-- 一一对应 -->
+        <id name="id" column="id"></id>
+        <property name="num" column="num"></property>        
+        <property name="date" column="date"></property>
+        <property name="w1" column="w1"></property> 
+		<property name="w2" column="w2"></property>        
+        <property name="high" column="high"></property>
+        <property name="low" column="low"></property> 
+        <property name="wind" column="wind"></property>        
+        <property name="direction" column="direction"></property>  
+    </class>
+</hibernate-mapping>

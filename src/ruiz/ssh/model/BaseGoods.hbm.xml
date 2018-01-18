@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ruiz.ssh.model">
+
+    <!-- class 和 table 对应 -->
+    <class name="BaseGoods" table="basegoods">
+        <!-- 一一对应 -->
+        <id name="id" column="id"><generator class="increment" /></id>
+        <property name="baseid" column="baseid"></property>  
+        <property name="materialid" column="materialid"></property>
+        <property name="amount" column="amount"></property>  
+        <property name="schid" column="schid"></property>  
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,68 @@
+h1
+{
+	text-align:center;
+}
+form
+{
+	position:absolute;
+	left:1200px;
+	top:250px;
+}
+form.login{
+	height:200px;
+	width:100px;
+}
+img.logo{
+	position:relative;
+	left: 100px;
+	top:  70px
+}
+img.logo2{
+	position:relative;
+	left: 100px;
+	top:  70px
+}
+p{
+	position:absolute;
+	left: 900px;
+	top:  900px
+}
+#fat-btn1{
+	position:absolute;
+	left: 1550px;
+	top:  100px
+}
+#fat-btn2{
+	position:absolute;
+	left: 1700px;
+	top:  100px
+}
+#s1{
+	position:absolute;
+	left: 100px;
+	top:  175px
+}
+#s2{
+	position:absolute;
+	left: 350px;
+	top:  175px
+}
+#s3{
+	position:absolute;
+	left: 600px;
+	top:  175px
+}
+#s4{
+	position:absolute;
+	left: 850px;
+	top:  175px
+}
+#myTable{
+	position: absolute;
+	top: 350px
+}
+#xz{
+	position: absolute;
+	left: 100px;
+	top: 270px
+}
