@@ -127,6 +127,13 @@
             <property name="basegoodsDao" ref="basegoodsDao"></property>
         </bean>
         
+         <!-- Schedule -->
+        <bean id="scheduleDao" class="ruiz.ssh.dao.ScheduleDaoImpl">
+            <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="scheduleService" class="ruiz.ssh.service.ScheduleServiceImpl">
+            <property name="scheduleDao" ref="scheduleDao"></property>
+        </bean>
         
         <!-- scheduleAction  -->
         <bean id="scheduleAction" class="ruiz.ssh.action.ScheduleAction">

@@ -11,6 +11,6 @@ public interface MaterialDao {
     public List<Material> getAll();
     public List<Material> match(String s);
     
-    public Material tbadd(String name,String type,String detail,int weight, int volume);
-    public boolean tbupdate(int id,String name,String type,String detail,int weight, int volume);
+    public Material tbadd(String name,String type,String detail,double weight, double volume);
+    public boolean tbupdate(int id,String name,String type,String detail,double weight, double volume);
 }

@@ -78,7 +78,7 @@ public class MaterialDaoImpl implements MaterialDao {
 	}
 
 	@Override
-	public Material tbadd(String name, String type, String detail, int weight, int volume) {
+	public Material tbadd(String name, String type, String detail, double weight, double volume) {
 		Session session = sessionFactory.openSession();
         session.beginTransaction();
         Material material = new Material();
@@ -96,7 +96,7 @@ public class MaterialDaoImpl implements MaterialDao {
 	}
 
 	@Override
-	public boolean tbupdate(int id, String name, String type, String detail, int weight, int volume) {
+	public boolean tbupdate(int id, String name, String type, String detail, double weight, double volume) {
 		Session session = sessionFactory.openSession();
         session.beginTransaction();
         Material material = new Material();

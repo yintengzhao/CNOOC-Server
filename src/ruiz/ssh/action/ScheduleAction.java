@@ -17,10 +17,12 @@ import ruiz.ssh.model.AvlShip;
 import ruiz.ssh.model.Base;
 import ruiz.ssh.model.BaseGoods;
 import ruiz.ssh.model.ListItem;
+import ruiz.ssh.model.Schedule;
 import ruiz.ssh.service.AvlShipService;
 import ruiz.ssh.service.BaseGoodsService;
 import ruiz.ssh.service.BaseService;
 import ruiz.ssh.service.ListItemService;
+import ruiz.ssh.service.ScheduleService;
 import ruiz.ssh.utils.*;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -45,10 +47,14 @@ import java.util.Date;
 public class ScheduleAction {
 	private static final long serialVersionUID = 1L;
 	//计算模块地址
-	public static final String ADD_URL = "http://localhost:14567/do_sim";  
+	public static final String ADD_URL = "http://localhost:4567/do_sim";   
+	int baseids[]=new int[5];
 	//调度id
 	private Map<String, Object> session;
 	private int schid;
+	
+	private ScheduleService scheduleService;
+	
 	//物资清单
 	private ListItem listitem;
 	private List<ListItem> listitems;
@@ -72,7 +78,7 @@ public class ScheduleAction {
 		HttpServletResponse response = ServletActionContext.getResponse();  
 		response.setHeader("Access-Control-Allow-Origin", "*");
 	}
-	
+	 
 	//按调度id查找调度
 	public String querybyschid() {
 		setheader();
@@ -96,10 +102,12 @@ public class ScheduleAction {
 	}
 	//解析JSON
 	public String parse() throws IOException {
+		//将仿真开始时间设为仿真的标识符
 		String schid =null;
 		int basenum=1;
 		Long time=System.currentTimeMillis();
 		schid= time.toString();
+		
 		//设置response符合angular要求
 		HttpServletResponse response = ServletActionContext.getResponse();
 		response.setHeader("Access-Control-Allow-Origin", "*");
@@ -114,11 +122,27 @@ public class ScheduleAction {
 			//打印收到的JSON字符串
 			System.out.println(rawText);
 			JSONObject jsonObj = JSON.parseObject(rawText);
+			
+			//解析仿真基本信息
+			//解析基地位置
+//			JSONArray infojson = jsonObj.getJSONArray("sch");
+//			List<Schedule> schs = JSON.parseArray(infojson.toJSONString(), Schedule.class);
+//			basenum=schs.size();
+//			for (Schedule sch : schs) {
+//				sch.setStarttime(schid);
+//				System.out.println(sch);
+//				scheduleService.addSchedule(sch);
+//			}
+//			Schedule sch = jsonObj.parseObject("sch",Schedule.class);
+//			sch.setStarttime(schid);
+//			scheduleService.addSchedule(sch);
+			
 			//解析基地位置
 			JSONArray basejson = jsonObj.getJSONArray("base");
 			List<Base> bases = JSON.parseArray(basejson.toJSONString(), Base.class);
 			basenum=bases.size();
 			for (Base base : bases) {
+				baseids[base.getId()]=1;
 				baseService.updatexy(base);
 			}
 			//解析所需物资
@@ -136,6 +160,7 @@ public class ScheduleAction {
 				avlshipService.addAvlShip(ship);
 			}
 		}
+		
 		String no = solve(schid,basenum);
 		// return "success";
 		response.setContentType("text/html;charset=UTF-8");
@@ -154,8 +179,10 @@ public class ScheduleAction {
 		StringBuffer basegoodsstring =new StringBuffer();
 		basegoodsstring.append(",\"bases\":[");
 		Map<String,Object> basegoods=  new HashMap<String, Object>();
-		for(int i=1;i<=basenum;i++)
-		{
+		int j=0;
+		for(int i=1;i<=4;i++)
+		if(baseids[i]==1){
+			j++;
 			JSONObject jsonbasegoods = new JSONObject();
 			jsonbasegoods.put("id", i);
 			jsonbasegoods.put("x", baseService.query(i).getX());
@@ -163,7 +190,7 @@ public class ScheduleAction {
 			basegoodslist = basegoodsService.querybybaseid(i);
 			jsonbasegoods.put("goods", basegoodsService.querybybaseid(i));
 			basegoodsstring.append(jsonbasegoods.toJSONString());
-			if(i!=basenum) basegoodsstring.append(",");
+			if(j<basenum) basegoodsstring.append(",");
 		}
 		basegoodsstring.append("]");
 		//System.out.println(basegoodsstring.toString());
@@ -188,7 +215,7 @@ public class ScheduleAction {
 		String requestjson =json+basegoodsstring.toString()+
 				",\"task\":{\"report_name\": \"第一次仿真\",\"excutor\": \"王二\",\"description\": \"本次仿真主要目的是测试系统的基本运行情况，收集测试数据，为完善系统功能提供依据测试人王二有着多年的仿真系统测试经验，认真负责\"}"
 				+"}";
-		System.out.println(requestjson);
+		
 		String no=null;
 		try{  
 			
@@ -210,7 +237,8 @@ public class ScheduleAction {
 	            DataOutputStream out = new DataOutputStream(connection.getOutputStream());  
 	           
 	            //out.writeBytes(obj.toString());//这个中文会乱码  
-	            out.write(requestjson.getBytes("UTF-8"));//这样可以处理中文乱码问题  
+	            out.write(requestjson.getBytes("UTF-8"));//这样可以处理中文乱码问题 
+	            System.out.println("请求数据"+requestjson);
 	            out.flush();  
 	            out.close();  
 	              
@@ -334,6 +362,14 @@ public class ScheduleAction {
 
 	public void setBaseService(BaseService baseService) {
 		this.baseService = baseService;
+	}
+
+	public ScheduleService getScheduleService() {
+		return scheduleService;
+	}
+
+	public void setScheduleService(ScheduleService scheduleService) {
+		this.scheduleService = scheduleService;
 	}
 	
 }

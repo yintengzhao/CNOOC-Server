@@ -11,6 +11,12 @@ public class Ship {
     private int vcap;
     private int wcap;
     private int cost;
+    private double speed;
+    private double area;
+    private double deckweight;
+    private double drinkwater;
+    private double drillwater;
+    private double oil;
    
 	public int getId() {
 		return id;
@@ -71,6 +77,42 @@ public class Ship {
 	}
 	public void setCost(int cost) {
 		this.cost = cost;
+	}
+	public double getSpeed() {
+		return speed;
+	}
+	public void setSpeed(double speed) {
+		this.speed = speed;
+	}
+	public double getArea() {
+		return area;
+	}
+	public void setArea(double area) {
+		this.area = area;
+	}
+	public double getDeckweight() {
+		return deckweight;
+	}
+	public void setDeckweight(double deckweight) {
+		this.deckweight = deckweight;
+	}
+	public double getDrinkwater() {
+		return drinkwater;
+	}
+	public void setDrinkwater(double drinkwater) {
+		this.drinkwater = drinkwater;
+	}
+	public double getDrillwater() {
+		return drillwater;
+	}
+	public void setDrillwater(double drillwater) {
+		this.drillwater = drillwater;
+	}
+	public double getOil() {
+		return oil;
+	}
+	public void setOil(double oil) {
+		this.oil = oil;
 	}
     
     

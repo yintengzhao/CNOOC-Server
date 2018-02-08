@@ -17,6 +17,13 @@
         <property name="image" column="image"></property>
         <property name="vcap" column="vcap"></property> 
         <property name="wcap" column="wcap"></property> 
-        <property name="cost" column="cost"></property>  
+        <property name="cost" column="cost"></property>
+        <property name="speed" column="speed"></property> 
+        <property name="deckweight" column="deckweight"></property> 
+        <property name="drinkwater" column="drinkwater"></property> 
+        <property name="drillwater" column="drillwater"></property> 
+        <property name="oil" column="oil"></property> 
+        <property name="area" column="area"></property>
+         
     </class>
 </hibernate-mapping>

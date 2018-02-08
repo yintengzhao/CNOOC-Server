@@ -6,8 +6,8 @@ public class Material {
     private String type;
     private String detail;
     //private int amount;
-    private int weight;
-    private int volume;
+    private double weight;
+    private double volume;
     
   
 	public int getId() {
@@ -34,17 +34,18 @@ public class Material {
 	public void setDetail(String detail) {
 		this.detail = detail;
 	}
-	public int getWeight() {
+	public double getWeight() {
 		return weight;
 	}
-	public void setWeight(int weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-	public int getVolume() {
+	public double getVolume() {
 		return volume;
 	}
-	public void setVolume(int volume) {
+	public void setVolume(double volume) {
 		this.volume = volume;
 	}
+	
     
 }

@@ -6,6 +6,9 @@ public class Base {
     private int area;
     private int x;
     private int y;
+    private String oilspeed;
+    private String waterspeed;
+    private String cargospeed;
 	public int getId() {
 		return id;
 	}
@@ -36,6 +39,23 @@ public class Base {
 	public void setY(int y) {
 		this.y = y;
 	}
-	
+	public String getOilspeed() {
+		return oilspeed;
+	}
+	public void setOilspeed(String oilspeed) {
+		this.oilspeed = oilspeed;
+	}
+	public String getWaterspeed() {
+		return waterspeed;
+	}
+	public void setWaterspeed(String waterspeed) {
+		this.waterspeed = waterspeed;
+	}
+	public String getCargospeed() {
+		return cargospeed;
+	}
+	public void setCargospeed(String cargospeed) {
+		this.cargospeed = cargospeed;
+	}
     
 }

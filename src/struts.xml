@@ -67,6 +67,12 @@
                		<param name="root">baselist</param>  
             	</result>  
        	 	</action>
+       	 	<action name="update"  
+            	class="ruiz.ssh.action.BaseAction" method="updateBase">  
+            	<result type="json">   
+               		<param name="root">base</param>  
+            	</result>  
+       	 	</action>
         </package>
         
         <package name="ship" extends="struts-default,json-default"  namespace="/ship">

@@ -36,6 +36,8 @@
         <mapping resource="ruiz/ssh/model/AvlShip.hbm.xml"/>
         <mapping resource="ruiz/ssh/model/ListItem.hbm.xml"/>
         <mapping resource="ruiz/ssh/model/BaseGoods.hbm.xml"/>
+        <mapping resource="ruiz/ssh/model/Schedule.hbm.xml"/>
+        <mapping resource="ruiz/ssh/model/Result.hbm.xml"/>
     </session-factory>
 
 </hibernate-configuration>

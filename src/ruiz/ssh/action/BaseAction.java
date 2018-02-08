@@ -143,8 +143,7 @@ public class BaseAction {
         // 放入一个是否操作成功的标识  
         dataMap.put("Result", "OK");   
         dataMap.put("Records", baselist); 
-		HttpServletResponse response = ServletActionContext.getResponse();  
-		response.setHeader("Access-Control-Allow-Origin", "*");
+        setheader();
 		return "success";
 	}
 
@@ -162,15 +161,15 @@ public class BaseAction {
 
 	public String updateBase() {
 		setheader();
-		base = baseService.query(base.getId());
-		return "update";
-	}
-
-	public String updateBaseImpl() {
-		setheader();
+		int x=base.getX();
+		int y=base.getY();
+		base=baseService.queryById(base.getId()).get(0);
+		base.setX(x);
+		base.setY(y);
 		baseService.updateBase(base);
 		return list();
 	}
+
 
 	public String  queryBase() {
 		setheader();

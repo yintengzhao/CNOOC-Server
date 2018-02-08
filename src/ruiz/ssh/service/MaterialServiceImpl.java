@@ -34,7 +34,6 @@ public class MaterialServiceImpl implements MaterialService {
 
 	@Override
 	public  List<Material>  queryById(int id) {
-
 		return materialDao.queryById(id);
 	}
 
@@ -51,13 +50,13 @@ public class MaterialServiceImpl implements MaterialService {
 	}
 
 	@Override
-	public Material tbadd(String name, String type, String detail, int weight, int volume) {
+	public Material tbadd(String name, String type, String detail, double weight, double volume) {
 		
 		return materialDao.tbadd(name, type, detail, weight, volume);
 	}
 
 	@Override
-	public boolean tbupdate(int id, String name, String type, String detail, int weight, int volume) {
+	public boolean tbupdate(int id, String name, String type, String detail, double weight, double volume) {
 		
 		return materialDao.tbupdate(id, name, type, detail, weight, volume);
 	}

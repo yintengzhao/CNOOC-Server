@@ -13,5 +13,8 @@
         <property name="area" column="area"></property>        
         <property name="x" column="x"></property>
         <property name="y" column="y"></property>   
+        <property name="oilspeed" column="oilspeed"></property> 
+        <property name="waterspeed" column="waterspeed"></property> 
+        <property name="cargospeed" column="cargospeed"></property> 
     </class>
 </hibernate-mapping>

@@ -31,9 +31,8 @@ public class MaterialAction {
 	private String name;
 	private String type;
 	private String detail;
-	// private int amount;
-	private int weight;
-	private int volume;
+	private double weight;
+	private double volume;
 	
 	public String getName() {
 		return name;
@@ -59,19 +58,19 @@ public class MaterialAction {
 		this.detail = detail;
 	}
 
-	public int getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 
-	public int getVolume() {
+	public double getVolume() {
 		return volume;
 	}
 
-	public void setVolume(int volume) {
+	public void setVolume(double volume) {
 		this.volume = volume;
 	}
 
